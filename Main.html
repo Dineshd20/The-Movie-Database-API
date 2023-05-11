@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <style>
+            body{
+                color: white;
+
+                background-color: rgb(6, 75, 75);
+            
+            }
+                
+            
+            .heading{
+                color: white; }
+            #grid{
+                margin-top: 100px;
+                display: inline-grid;
+                width: 90%;
+                text-align: center;
+               
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 30px;
+             }
+             
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 50px;
+                cursor: pointer;
+            }
+            #body{
+                text-align: center;
+            }
+            
+    </style>
+</head>
+<body id="body">
+    <h1>Movie Cards</h1>
+    <div id="grid"></div>
+    <h2>Create an account to view and explore movie cards or login.</h2>
+
+    <a class="button" href="login.php">Login</a>
+    <a class="button" href="signup.php">Signup</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.body{
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); 
+
+ font-family: 'Lato', monospace;
+
+}
+.info{
+    color: white;
+    
+}
+.AccountB{
+
+
+      background-color: powderblue;
+
+}
+.name{
+    float: middle;
+    font-family: 'Lato', monospace;
+    font-size: 20px;
+    padding: 5px;}
+.err_msg{
+ padding: 3px;
+    margin: 0;
+ 
+    color:red;
+    font-family: 'Lato', sans-serif ;
+    position: inherit;
+    font: 15px;
+    
+    
+    line-height: 0;
+
+}
+ .heading{
+       color: white;
+    }
+
+.box {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.171);
+    text-align: center;}
+
+     
+
+/* styling login and singup input fields*/
+input[type=username], input[type=password],input[type=email],input[type=text] {
+    padding: 12px 20px;
+   margin: 8px 0;
+    width: 40%;
+    
+    background-color: rgb(245, 243, 243);
+    box-sizing: border-box;
+    border: none;
+    transition: width 0.5s;
+    border-bottom: solid white;
+    letter-spacing: 3px;
+    
+
+  
+  }
+  
+  input[type=username]:focus, input[type=password]:focus,input[type=email]:focus,input[type=text]:focus{
+    outline: none;
+    border-bottom: solid #5AF9F1;
+    width: 60%;
+    
+
+
+
+ }

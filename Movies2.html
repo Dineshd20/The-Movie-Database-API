@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+          
+        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);     }
+        .heading{
+           color: white; }
+        #grid{
+        display: inline-grid;
+            width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 30px; }
+
+    .small_cont{
+
+    }
+    .ratings{
+        float: right;
+        
+        border-radius: 25%;
+        
+        font-size: 15px;
+        font-weight: bold;
+    
+    }
+
+    .show_Btn{
+
+    text-decoration: none;
+        border:none;
+    
+    
+    color: rgb(255, 255, 255);
+        width: 50px;
+        height: 45px;
+        font-size: 20px;
+        font-weight: 500;
+        word-spacing: 3px;
+        background-image: linear-gradient(to right, rgb(70, 228, 201), 
+        rgb(65, 139, 236));
+        cursor: pointer;
+        padding: 3%;
+    
+
+
+    }
+    .show_Btn:hover{
+
+        background-image: linear-gradient(to left, rgb(70, 228, 201), 
+        rgb(65, 139, 236));
+    }
+
+    .show_tBtn span{
+        width: 60px;
+        height: 45px;
+        position: relative;
+        transition: 0.5s;
+    }
+    .show_Btn span:after{
+    
+    content: '\00bb';
+
+        opacity: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .show_Btn:hover span{
+        padding-right: 25px;
+        transition: 0.5s;
+
+    }
+
+    .show_Btn:hover span:after{
+        opacity: 1;
+        right: 0;
+
+    }
+    .box {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        padding: 2%;
+        margin: 5px;
+        background-color: rgba(255, 255, 255, 0.171);
+        text-align: center;}
+    .pic{
+        width: 250px ;
+        height: 250px;
+        margin-bottom: 20px;}
+</style>
+
+    <title>Movies</title>
+</head>
+<body >
+    <h1 class="heading">All collection</h1>
+
+<div  >
+    <Section id= "grid" >
+        
+    </Section>
+   
+</div>    
+    
+<script>
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const base_html="https://api.themoviedb.org/3";
+    const v_key= "?api_key=0cf56f8238aaf8582a0bea9fa0aedd9d";
+    let movie_id= 920;
+    const base_poster="https://image.tmdb.org/t/p/w342";
+    fetch(base_html+"/movie/popular"+v_key+"&language=en-US&page=1")
+    .then( function (response){
+        return response.json();
+    }).then((data) =>{
+    
+        console.log(data);    
+        let cont=document.getElementById("grid");
+       for(let i=0; i <data.results.length; i++){
+
+       
+        let cell = document.createElement("div");
+        cell.setAttribute("class", "box");
+        
+       
+    cell.innerHTML = ` 
+        <img  class="pic" src="${base_poster+data.results[i].poster_path}" alt="${data.results[i].title}"><br>
+        <div class= "small_cont">
+            <a  class="show_Btn" href="MovieDetail.php?movie_id=${data.results[i].id}"><span>Show more </span></a>
+        <span class="ratings box">${data.results[i].vote_average}</span>
+        </div>`;
+        cont.appendChild(cell);
+
+
+       }
+    
+    });
+    
+
+    
+    
+    </script>
+    
+</body>
+</html>
